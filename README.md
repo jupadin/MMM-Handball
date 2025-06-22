@@ -31,8 +31,8 @@ npm install
 ````javascript
     modules: [
         {
-            module: "MMM-NBA",
-            header: "MMM-NBA",
+            module: "MMM-Handball",
+            header: "MMM-Handball",
             position: "top_left",
         }
     ]
