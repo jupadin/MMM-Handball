@@ -9,8 +9,8 @@ This module is an extention for the [MagicMirror](https://github.com/MichMich/Ma
 ## Thanks to
 The module is based on the work of [tschumel](https://github.com/tschumel) with [MMM-handball-netz](https://github.com/tschumel/MMM-handball-netz) and got extended by some ideas of the module of [fewieden](https://github.com/fewieden) with [MMM-NHL](https://github.com/fewieden/MMM-NHL).
 
-### To-Do's
-[ ]
+## To-Do's
+[ ] Display team abbreviation names in score board
 
 ## Installation
 
