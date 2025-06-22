@@ -1,0 +1,22 @@
+{
+  "name": "mmm-handball",
+  "version": "1.0.0",
+  "description": "MagicMirror² module to display the current standings in the german handball league.",
+  "main": "MMM-Handball.js",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jupadin/MMM-Handball.git"
+  },
+  "author": "jupadin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jupadin/MMM-Handball/issues"
+  },
+  "homepage": "https://github.com/jupadin/MMM-Handball#readme",
+  "devDependencies": {
+    "mocha": "^11.7.0"
+  }
+}

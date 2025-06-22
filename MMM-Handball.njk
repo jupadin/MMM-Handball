@@ -1,0 +1,153 @@
+{% if loading or error %}
+	<div class="light small dimmed">{{ message }}</div>
+{% else %}
+<div id="wrapper">
+	<table class="MMM-Handball table score">
+		<thead>
+			<tr class="tableHeader header">
+				<th class="header rank">
+					{% if showHeaderAsIcons %}
+						<i class="fa-solid fa-medal"></i>
+					{% else %}
+						{{ "RANK" | translate }}
+					{% endif %}
+				</th>
+				<th class="header name" colspan=2>
+					{% if showHeaderAsIcons %}
+						<i class="name fas fa-tag"></i>
+					{% else %}
+						{{ "TEAM" | translate }}
+					{% endif %}
+				</th>
+
+				<th class="header gamesPlayed">
+				{% if showHeaderAsIcons %}
+					<i class="fa-solid fa-futbol"></i>
+				{% else %}
+					{{ "MATCHES" | translate }}
+				{% endif %}
+				</th>
+				
+				<th class="header wins">
+				{% if showHeaderAsIcons %}
+					<i class="fa-solid fa-plus"></i>
+				{% else %}
+					{{ "S" | translate }}
+				{% endif %}
+				</th>
+				<th class="header draws">
+				{% if showHeaderAsIcons %}
+					<i class="fa-solid fa-equals"></i>
+				{% else %}
+					{{ "D" | translate }}
+				{% endif %}
+				</th>
+				<th class="header lost">
+				{% if showHeaderAsIcons %}
+					<i class="fa-solid fa-minus"></i>
+				{% else %}
+					{{ "L" | translate }}
+				{% endif %}
+				</th>
+
+				<th class="header numGoalsDiff">
+				{% if showHeaderAsIcons %}
+					<i class="fa-solid fa-bullseye"></i>
+				{% else %}
+					{{ "S" | translate }}
+				{% endif %}
+				</th>
+				<th class="header numPoints" colspan=3>
+				{% if showHeaderAsIcons %}
+					<i class="fa-solid fa-chart-line"></i>
+				{% else %}
+					{{ "POINTS" | translate }}
+				{% endif %}
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for team in table %}
+				<tr>
+					<td class="rank">{{ team.tabScore }}</td>
+					<td class="teamLogo logo">
+						<img {% if uncolored %}class="uncolored"{% endif %}src="{{ team.teamLogo | safe }}">
+					</td>
+					<td class="name">{{ team.tabTeamname }}</td>
+					<td class="gamesPlayed">{{ team.numPlayedGames }}</td>
+					<td class="gamesWon">{{ team.numWonGames }}</td>
+					<td class="gamesEqual">{{ team.numEqualGames }}</td>
+					<td class="gamesLost">{{ team.numLostGames }}</td>
+					<td class="goalsDiff">{{ team.numGoalsDiff }}</td>
+					<td class="numPointsPlus">{{ team.numPointsPlus }}</td>
+					<td class="numPointsDivider">:</td>
+					<td class="numPointsMinus">{{ team.numPointsMinus }}</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+			{% if showFooter %}
+				<tfoot>
+					<tr class="footerRow">
+						<td class="footer" colspan="11">
+							{{ "UPDATED" | translate }}: {{ lastUpdate }}
+						</td>
+					</tr>
+				</tfoot>
+			{% endif %}
+	</table>
+
+	{% if showGames %}
+	<tr>
+	<table class="MMM-Handball table games">
+		<thead>
+			<tr>
+				<th class="dateHeader date header">
+					{% if showHeaderAsIcons %}
+						<i class="date fas fa-clock"></i>
+					{% else %}
+						{{ "TIME" | translate }}
+					{% endif %}
+				</th>
+				<th class="firstTeamHeader header" colspan="3">
+					{% if showHeaderAsIcons %}
+						<i class="firstTeam fas fa-home"></i>
+					{% else %}
+						{{ "HOME" | translate }}
+					{% endif %}
+				</th>
+				<th class="vsHeader header"> </th>
+				<th class="secondTeamHeader header" colspan="3">
+					{% if showHeaderAsIcons %}
+						<i class="secondTeamHeader header icon fas fa-tag"></i>
+					{% else %}
+						{{ "GUEST" | translate }}
+					{% endif %}
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+		{% for data in games %}
+			<tr class="{% if data.h in focus_on or data.v in focus_on %}bright{% endif %}">
+				<td class="date">{{ data.starttime }}</td>
+				<td class="firstTeam fistTeamName name">{{ data.h }}</td>
+				<td class="firstTeam firstTeamLogo logo">
+					<img {% if uncolored %}class="uncolored"{% endif %}src="{{ data.hl | safe }}">
+				</td>
+				<td class="firstTeam firstTeamScore score">{{ data.hs }}</td>
+				<td class="vs">:</td>
+				<td class="secondTeam secondTeamScore score">{{ data.vs }}</td>
+				<td class="secondTeam secondTeamLogo logo">
+					<img {% if uncolored %}class="uncolored"{% endif %}src="{{ data.vl | safe }}">
+				</td>
+				<td class="secondTeam secondTeamName name">{{ data.v }}</td>
+			</tr>
+		{% endfor %}
+		</tbody>
+
+		<tfoot>
+
+		</tfoot>
+	</table>
+	{% endif %}
+</div>
+{% endif %}

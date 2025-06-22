@@ -1,0 +1,115 @@
+/* Magic Mirror
+ * Module: MMM-Handball
+ *
+ * By jupadin
+ * MIT Licensed.
+*/
+
+.MMM-Handball {
+    font-size: 14px;
+    line-height: 1.4 !important;
+
+    /* display: flex;
+    flex-direction: column; */
+}
+
+.MMM-Handball .tableHeader {
+    text-align: center;
+}
+.MMM-Handball .date {
+    padding-right: 25px;
+}
+.MMM-Handball .firstTeam {
+    text-align: left;
+    padding-right: 15px;
+}
+.MMM-Handball .firstTeamScore {
+    padding-right: 5px;
+}
+.MMM-Handball .secondTeam {
+    text-align: right;
+    padding-left: 15px;
+}
+.MMM-Handball .secondTeamScore {
+    padding-left: 5px;
+}
+
+/* .MMM-Handball .score {
+    font-size: 14px !important;
+} */
+
+.MMM-Handball .date {
+    padding-right: 25px ;
+}
+
+/* .MMM-Handball .byeweek.team .byeweek.logo {
+    text-align: left;
+    padding-right: 15px;
+} */
+
+.MMM-Handball .footer {
+    text-align: right;
+    font-size: small;
+    border-top: 1px solid var(--color-text-dimmed);
+}
+
+.MMM-Handball td img {
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+}
+
+.MMM-Handball .rank {
+    text-align: right;
+    padding: 0px;
+}
+
+.MMM-Handball .teamLogo {
+    padding: 0px 10px 0px 20px;
+}
+
+.MMM-Handball .name {
+    padding-right: 10px;
+}
+
+.MMM-Handball .games, .gamesPlayed, .gamesWon, .gamesEqual, .gamesLost {
+    text-align: center;
+    padding-right: 2px;
+}
+
+.MMM-Handball .goalsDiff {
+    text-align: right;
+    padding-right: 10px;
+}
+
+.MMM-Handball th {
+    padding: 0px 10px;
+}
+
+.MMM-Handball .numPointsPlus {
+    text-align: left;
+    padding-left: 10px;
+}
+
+.MMM-Handball .numPointsDivider {
+    text-align: center;
+}
+
+.MMM-Handball .numPointsMinus {
+    text-align: right;
+}
+
+.MMM-Handball .uncolored {
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+}
+
+.MMM-Handball .footer {
+    text-align: right;
+    font-size: small;
+    border-top: 1px solid var(--color-text-dimmed);
+}
+
+.MMM-Handball .games {
+    padding-top: 10px;
+}
