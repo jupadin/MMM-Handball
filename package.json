@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/jupadin/MMM-Handball#readme",
   "devDependencies": {
-    "mocha": "^11.7.0"
+    "mocha": "^11.7.4"
   }
 }
